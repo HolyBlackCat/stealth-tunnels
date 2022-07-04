@@ -1,5 +1,7 @@
 #pragma once
 
+#include "game/lighting.h"
+
 constexpr int tile_size = 12;
 
 ENUM( Tile ENUM_CLASS,
@@ -20,6 +22,8 @@ struct Map
     MEMBERS(
         DECL(Array2D<Cell>) cells
     )
+
+    Lighting::EdgeLoops lighting_edge_loops;
 
     [[nodiscard]] static Map LoadFromFile(Stream::ReadOnlyData file);
 

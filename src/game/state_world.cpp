@@ -28,6 +28,7 @@ namespace States
             Graphics::Clear();
 
             r.BindShader();
+            r.iquad(ivec2(0), screen_size).center().color(fvec3(0,0,0.5));
 
             map.Render(mouse.pos());
 

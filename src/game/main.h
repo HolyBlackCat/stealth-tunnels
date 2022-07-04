@@ -35,5 +35,11 @@ extern Random::DefaultInterfaces<Random::DefaultGenerator> ra;
 
 STRUCT( StateBase EXTENDS GameUtils::State::Base POLYMORPHIC )
 {
+    StateBase() {}
+
+    // Move-only.
+    StateBase(StateBase &&) = default;
+    StateBase &operator=(StateBase &&) = default;
+
     virtual void Render() const = 0;
 };
